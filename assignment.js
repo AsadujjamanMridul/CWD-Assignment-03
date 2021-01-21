@@ -3,6 +3,7 @@
 
 // Problem - 01
 function kilometerToMeter(kilometer) {
+
     if (isNaN(kilometer)) {
         return "You must enter a NUMERIC VALUE!"
     }
@@ -16,6 +17,7 @@ function kilometerToMeter(kilometer) {
         const meter = kilometer * 1000;
         return meter;
     }
+
 }
 
 
@@ -23,31 +25,33 @@ function kilometerToMeter(kilometer) {
 
 
 // Problem - 02
-function budgetCalculator(watch, mobile, laptop) {
-    if (isNaN(watch) || isNaN(mobile) || isNaN(laptop)) {
+function budgetCalculator(watch, phone, laptop) {
+
+    if (isNaN(watch) || isNaN(phone) || isNaN(laptop)) {
         return "You must enter NUMERIC VALUES for every single item!"
     }
 
-    else if (!Number.isFinite(watch * mobile * laptop)) {
+    else if (!Number.isFinite(watch * phone * laptop)) {
         return "You must enter FINITE INTEGER VALUE!"
     }
 
     else if (!Number.isInteger(watch) ||
-        !Number.isInteger(mobile) ||
+        !Number.isInteger(phone) ||
         !Number.isInteger(laptop) ||
-        (watch * mobile * laptop) < 0) {
+        (watch * phone * laptop) < 0) {
         return "You must enter POSITIVE INTEGER VALUES for every single item!"
     }
 
     else {
         const watchPrice = watch * 50;
-        const mobilePrice = mobile * 100;
+        const phonePrice = phone * 100;
         const laptopPrice = laptop * 500;
 
-        const totalPrice = watchPrice + mobilePrice + laptopPrice;
+        const totalPrice = watchPrice + phonePrice + laptopPrice;
 
         return totalPrice;
     }
+
 }
 
 
@@ -96,13 +100,13 @@ function hotelCost(days) {
 function megaFriend(friend) {
 
     if (Array.isArray(friend)) {
-        if (friend.length <= 0) {
+
+        if (friend.length == 0) {
             return "You have entered an EMPTY ARRAY!";
         }
 
         else {
             let megaName = "";
-            let megaNameIndex = 0;
 
             for (let i = 0; i < friend.length; i++) {
 
@@ -116,10 +120,11 @@ function megaFriend(friend) {
 
             }
 
-            megaNameIndex = friend.indexOf(megaName);
-            return friend[megaNameIndex];
+            return megaName;
         }
+
     }
+
     else {
         return "You must enter a ARRAY of STRING(s)"
     }
